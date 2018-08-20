@@ -8,7 +8,9 @@ setup(
     description="A simple python library to parse a .odt document from libreoffice",
     packages=find_packages(),
     classifiers=[
-        "Programming Language :: Python :: 3 :: 2",
+        "Development Status :: 3 - Alpha"
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 2",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: MIT License",
         ],
