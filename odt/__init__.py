@@ -42,11 +42,3 @@ class ODTFile:
         return self.document_generator
 
 
-x=ODTFile('/home/coder/Desktop/mydoc.odt')
-x.libre_doc()
-print(x.accessdatetime())
-print(x.creationdatetime())
-print(x.documentgenerator())
-
-
-#libre_doc('/home/coder/Desktop/mydoc.odt')
