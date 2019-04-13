@@ -5,7 +5,7 @@ setup(
     version="1.0.0",
     author="Moses Baraza",
     author_email="clonesoftwares@gmail.com",
-    description="A simple python library to parse a .odt document from libreoffice",
+    description="A python module to open and read libre office writter .odt files",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha"
