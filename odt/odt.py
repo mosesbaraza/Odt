@@ -23,7 +23,7 @@ class OdtFile:
     def readodt(self):
         self.linelist=[]
         try:
-            with zipfile.ZipFile(odtfile, 'r') as odtstream:
+            with zipfile.ZipFile(self.filepath, 'r') as odtstream:
                 xmlstring=(odtstream.read('content.xml')).decode(encoding='utf-8')
                 tree=ET.fromstring(xmlstring)
                 for element in tree.iter():
@@ -35,7 +35,7 @@ class OdtFile:
             raise BadOdtFileError('Odt file is corrupt or broken')
 
     def odtstat(self):
-        with zipfile.ZipFile(odtfile, 'r') as odtstream:
+        with zipfile.ZipFile(self.filepath, 'r') as odtstream:
             xmlstring=(odtstream.read('meta.xml')).decode(encoding='utf-8')
             tree=ET.fromstring(xmlstring)
             key=[]
@@ -74,7 +74,7 @@ class OdtFile:
 
     @property
     def odtcreationdate(self):
-        with zipfile.ZipFile(odtfile, 'r') as odtstream:
+        with zipfile.ZipFile(self.filepath, 'r') as odtstream:
             xmlstring=(odtstream.read('meta.xml')).decode(encoding='utf-8')
             tree=ET.fromstring(xmlstring)
             for element in tree.iter():
@@ -82,5 +82,3 @@ class OdtFile:
                     return element.text
         odtstream.close()
 
-x=OdtFile(odtfile)
-print(x.readodt())
